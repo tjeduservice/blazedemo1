@@ -23,7 +23,7 @@ execution:
       modifications:
         set-prop:
           Token>filename: NON-NIT-KE40-LOGIN-QA_200User_216.csv
-    concurrency: 10
+    concurrency: 5
     ramp-up: 100s
     hold-for: 5m     
 
