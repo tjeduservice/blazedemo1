@@ -1,0 +1,30 @@
+---
+modules:
+  blazemeter:
+    token: 63699594c039006ea55de6ef:5ad57b869ed9ea9bfb42d9650f77626f113729c20dc5cf9af32b3e9d93d5fc2889baf76b
+  jmeter:
+    memory-xmx: 1G
+    
+reporting:
+  - module: blazemeter
+    test: Blazedemo site
+
+execution:
+  - scenario: 
+      script: blazedemo.jmx
+      modifications:
+        set-prop:
+          Token>filename: NON-NIT-KE40-LOGIN-QA_200User_216.csv
+    concurrency: 10
+    ramp-up: 100s
+    hold-for: 5m       
+  - scenario: 
+      script: blazedemo-myTest.jmx
+      modifications:
+        set-prop:
+          Token>filename: NON-NIT-KE40-LOGIN-QA_200User_216.csv
+    concurrency: 10
+    ramp-up: 100s
+    hold-for: 5m     
+
+ 
